@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URFUintership</title>
+    <link rel="stylesheet" href="vendor/normalize.css" />
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <div class="auth-wrapper">
+      <section class="registration active">
+        <span>Придумайте Логин</span>
+        <input type="text" placeholder="Логин" />
+        <span>Придумайте Пароль</span>
+        <input type="password" placeholder="Пароль" />
+        <span>Повторите Пароль</span>
+        <input type="password" placeholder="Повторите пароль" />
+        <span>Укажите email</span>
+        <input type="email" placeholder="Email" />
+        <button class="submit-btn">Зарегистрироваться</button>
+        <span class="social-auth">Войти с помощью Google</span>
+        <button class="switch-btn" id="show-auth">Войти</button>
+      </section>
+      <section class="authorization">
+        <span>Укажите Логин</span>
+        <input type="text" placeholder="Логин" />
+        <span>Укажите Пароль</span>
+        <input type="password" placeholder="Пароль" />
+        <span class="social-auth">Войти с помощью Google</span>
+        <button class="switch-btn" id="show-register">Регистрация</button>
+      </section>
+    </div>
+    <script src="scripts/reg_auth/reg_auth.js"></script>
+  </body>
+</html>

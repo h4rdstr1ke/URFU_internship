@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="vendor/normalize.css" />
+    <link rel="stylesheet" href="personal_account.css" />
+  </head>
+  <body>
+    <div class="account-container">
+      <h1>Личный кабинет</h1>
+      <div class="profile-section">
+        <div class="avatar">
+          <img
+            src="https://via.placeholder.com/150"
+            id="avatar-img"
+            alt="Аватар"
+          />
+          <input
+            type="file"
+            id="avatar-upload"
+            accept="image/*"
+            style="display: none"
+          />
+          <button id="change-avatar">Сменить фото</button>
+        </div>
+
+        <div class="profile-info">
+          <div class="info-item">
+            <label>ФИО:</label>
+            <span id="name-value">Иван Иванов</span>
+            <input
+              type="text"
+              id="name-input"
+              class="edit-input"
+              style="display: none"
+            />
+          </div>
+
+          <div class="info-item">
+            <label>Email:</label>
+            <span id="email-value">ivan@example.com</span>
+            <input
+              type="email"
+              id="email-input"
+              class="edit-input"
+              style="display: none"
+            />
+          </div>
+
+          <div class="info-item">
+            <label>Телефон:</label>
+            <span id="phone-value">+7 (123) 456-78-90</span>
+            <input
+              type="tel"
+              id="phone-input"
+              class="edit-input"
+              style="display: none"
+            />
+          </div>
+
+          <div class="buttons">
+            <button id="edit-btn">Редактировать</button>
+            <button id="save-btn" style="display: none">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/personal_account.js"></script>
+  </body>
+</html>
