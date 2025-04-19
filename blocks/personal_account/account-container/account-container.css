@@ -1,0 +1,8 @@
+* {
+    border: 1px solid black;
+   
+}
+
+.account-container {
+    display: flex;
+}

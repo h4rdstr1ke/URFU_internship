@@ -1,0 +1,13 @@
+.intro {
+    border: 1px solid black;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro h2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15%;
+}

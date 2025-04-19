@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'IstokWeb Regular'; 
+	src: url(Istok_Web/IstokWeb-Regular.ttf); 
+}
+@font-face {
+    font-family: 'IstokWeb Bold';
+    src: url(Istok_Web/IstokWeb-Bold.ttf);
+}
+@font-face {
+    font-family: 'Roboto_Condensed Regular';
+    src: url(Roboto_Condensed/RobotoCondensed-Black.ttf);
+}
+@font-face {
+    font-family: 'Roboto_Condensed Light';
+    src: url(Roboto_Condensed/RobotoCondensed-Light.ttf);
+}
+@font-face {
+    font-family: 'Roboto_Condensed ExtraLight';
+    src: url(Roboto_Condensed/RobotoCondensed-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Roboto_Condensed Medium';
+    src: url(Roboto_Condensed/RobotoCondensed-Medium.ttf);
+}
+@font-face {
+    font-family: 'Roboto_Condensed Bold';
+    src: url(Roboto_Condensed/RobotoCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: 'Inter ExtraLight';
+    src: url(Inter/Inter_18pt-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Inter Regular';
+    src: url(Inter/Inter_18pt-Regular.ttf);
+}

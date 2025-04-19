@@ -1,0 +1,4 @@
+.about-info {
+    display: flex;
+    flex-direction: column;
+}

@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="vendor/normalize.css" />
-    <link rel="stylesheet" href="personal_account.css" />
+    <link rel="stylesheet" href="pages/personal-account.css" />
   </head>
   <body>
+    <header class="header">
+      <img src="images/Logo.svg" />
+      <nav class="header-func">
+        <a href="index.html">Главная</a>
+        <a href="index.html">Каталог</a>
+        <a href="#">О нас</a>
+        <a href="personal_account.html"
+          ><img
+            class="header__personal_account"
+            src="images/Personal_Account.svg"
+            height="60px"
+            width="60px"
+            alt="personal_account"
+        /></a>
+      </nav>
+    </header>
     <div class="account-container">
-      <h1>Личный кабинет</h1>
-      <div class="profile-section">
+      <section class="photo-achievements">
         <div class="avatar">
           <img
-            src="https://via.placeholder.com/150"
+            src="images/avatar__test.jpg"
+            class="avatar-img"
             id="avatar-img"
-            alt="Аватар"
+            alt="avatar"
           />
           <input
             type="file"
@@ -23,9 +39,16 @@
             accept="image/*"
             style="display: none"
           />
-          <button id="change-avatar">Сменить фото</button>
+          <button class="avatar-button" id="change-avatar">Сменить фото</button>
         </div>
-
+        <div class="achievements">
+          <h3>Достижения</h3>
+          <div class="achievements-card">3123131</div>
+          <div class="achievements-card">3123131</div>
+          <div class="achievements-card">3123131</div>
+        </div>
+      </section>
+      <section class="about-info">
         <div class="profile-info">
           <div class="info-item">
             <label>ФИО:</label>
@@ -59,13 +82,17 @@
               style="display: none"
             />
           </div>
-
-          <div class="buttons">
-            <button id="edit-btn">Редактировать</button>
-            <button id="save-btn" style="display: none">Сохранить</button>
-          </div>
         </div>
-      </div>
+        <div class="profile-about">
+          <p>Обо мне</p>
+        </div>
+
+        <div class="buttons">
+          <button id="edit-btn">Редактировать</button>
+          <button id="save-btn" style="display: none">Сохранить</button>
+          <button>Выйти</button>
+        </div>
+      </section>
     </div>
 
     <script src="scripts/personal_account.js"></script>

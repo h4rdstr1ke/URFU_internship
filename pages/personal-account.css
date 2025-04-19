@@ -1,0 +1,17 @@
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header-func.css);
+@import url(../blocks/header/header__personal_account.css);
+@import url(../blocks/personal_account/personal_account.css);
+@import url(../blocks/personal_account/avatar/avatar.css);
+@import url(../blocks/personal_account/avatar/avatar-img.css);
+@import url(../blocks/personal_account/avatar/avatar-button.css);
+@import url(../blocks/personal_account/account-container/account-container.css);
+@import url(../blocks/personal_account/photo-achievements/photo-achievements.css);
+@import url(../blocks/personal_account/achievements/achievements.css);
+@import url(../blocks/personal_account/achievements/achievements-card.css);
+@import url(../blocks/personal_account/);
+@import url(../blocks/personal_account/profile-info/profile-info.css);
+@import url(../blocks/personal_account/profile-info/info-item.css);
+@import url(../blocks/personal_account/about-info/about-info.css);
+@import url(../blocks/personal_account/profile-about/profile-about.css);
+@import url(../fonts/personal_account-fonts.css);

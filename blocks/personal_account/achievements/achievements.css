@@ -1,0 +1,6 @@
+.achievements {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    text-align: center;
+}

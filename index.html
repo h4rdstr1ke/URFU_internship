@@ -16,61 +16,100 @@
           <a href="index.html">Каталог</a>
           <a href="#">О нас</a>
           <a href="personal_account.html"
-            ><img src="images/Personal_Account.svg" height="100px"
+            ><img
+              class="header__personal_account"
+              src="images/Personal_Account.svg"
+              height="60px"
+              width="60px"
+              alt="personal_account"
           /></a>
         </nav>
       </header>
       <main class="main">
         <div class="lead">
           <h1>
-            Урфу internship это сервис для <br />поиска стажировок и
-            временной<br />
-            работы в кампусе.
+            <span>Урфу internship</span>
+            это сервис<br />
+            для поиска стажировок и<br />
+            временной работы в кампусе.
           </h1>
-          <img src="images/lead.svg" />
+          <img class="lead__img" src="images/lead.svg" />
         </div>
         <div class="intro">
           <h2>Как это работает?</h2>
           <div class="intro-card">
             <h3>step one</h3>
-            <p>Зарегестрируйтесь на платформе</p>
+            <p>Зарегистрируйтесь на платформе</p>
           </div>
-          <div class="intro-card">
+          <div class="intro-card intro-card_right">
             <h3>step two</h3>
             <p>Заполните информацию о себе, в вашем личном кабинете</p>
           </div>
-          <div class="intro-card">
+          <div class="intro-card intro-card_center">
             <h3>step three</h3>
             <p>Нажимайте на поиск и выбирайте интересующую вас вакансию</p>
           </div>
           <div class="intro__conclusion">
-            <p>Ожидайте, когда на вашу заявку откликнуться</p>
-            <img src="images/intro__smile.svg" />
+            <p>
+              Ожидайте, когда на вашу заявку откликнуться
+              <img
+                class="intro__conclusion-image"
+                src="images/intro__smile.svg"
+                width="120px"
+                alt="intro__smile"
+              />
+            </p>
           </div>
         </div>
         <div class="registration">
-          <h3>Приступим?</h3>
-          <button onclick="window.location.href='registration.html';">
+          <div class="registration_contain">
+            <h3>Приступим?</h3>
+          </div>
+          <button
+            class="registration-button"
+            onclick="window.location.href='registration.html';"
+          >
             Зарегистрироваться
+            <img
+              class="registration__rocket-image"
+              src="images/rocket.svg"
+              alt="rocket"
+            />
           </button>
         </div>
         <div class="karnegi">
-          <img src="images/karnegi.svg" />
-          <p>
-            Будьте заняты.Это самое дешевое лекарство на земле - и одно из самых
-            эффективных.
-          </p>
-          <span>Дейл Карнеги</span>
+          <img src="images/karnegi.svg" alt="karnegi" width="460px" />
+          <div class="karnegi-text">
+            <p>
+              Будьте заняты.Это самое дешевое лекарство на земле - и одно из
+              самых эффективных.
+            </p>
+            <span
+              >Дейл<br />
+              Карнеги</span
+            >
+          </div>
+          <img
+            class="karnegi__rectangle karnegi-rotation"
+            src="images/karnegi__rectangle.svg"
+          />
         </div>
-        <img src="" />
       </main>
       <footer class="footer">
         <h3>О нас</h3>
-        <p>Контакты для обратной связи</p>
-        <p>Поддержка</p>
-        <p>vlad04344@gmail.com</p>
-        <p>Пожелания</p>
-        <p>vlad04344@gmail.com</p>
+        <div class="footer-contacts">
+          <p>Контакты для обратной связи</p>
+          <div class="footer-contacts__block">
+            <div class="footer-contacts__card">
+              <p>Поддержка</p>
+              <p>vlad04344@gmail.com</p>
+            </div>
+            <div class="footer-contacts__card">
+              <p>Пожелания</p>
+              <p>vlad04344@gmail.com</p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   </body>
