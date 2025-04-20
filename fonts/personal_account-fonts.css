@@ -9,18 +9,3 @@ a {
     letter-spacing: 1%;
 }
 
-/* avatar */
-
-.avatar-button {
-    font-family: 'Roboto_Condensed Light';
-    font-size: 20px;
-    letter-spacing: 10%;
-}
-
-/*achievements*/
-
-.achievements h3 {
-    font-family: 'IsrokWeb Bold';
-    font-size: 24px;
-    letter-spacing: 7%;
-}
