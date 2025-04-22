@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $_SESSION['user_id'] = $user['ID'];
     $_SESSION['user_login'] = $user['login'];
-    header("Location: ../test.php");
+    header("Location: ../personal_account.php");
 } else {
     die("Неверный логин или пароль");
 }

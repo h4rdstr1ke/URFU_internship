@@ -1,129 +1,86 @@
 <?php
+
+
 session_start();
 
 if (empty($_SESSION['user_id'])) {
-  header("Location: login_form.html");
+  header("Location: registration.html");
   exit();
 }
+echo 'ID:' . $_SESSION['user_id'];
+
+require_once('db.php');
+require_once('php/get_account.php');
+
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Личный кабинет</title>
-  <link rel="stylesheet" href="vendor/normalize.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/personal-account.css" />
+  <title>Персональный аккаунт</title>
 </head>
 
 <body>
-  <header class="header">
-    <img src="images/Logo.svg" />
-    <nav class="header-func">
-      <a href="index.html">Главная</a>
-      <a href="index.html">Каталог</a>
-      <a href="#">О нас</a>
-      <a href="personal_account.html"><img class="header__personal_account" src="images/Personal_Account.svg"
-          height="60px" width="60px" alt="personal_account" /></a>
-    </nav>
-  </header>
-  <div class="container">
-    <h1>Анкета стажера</h1>
+  <a href="index.html">Главная</a>
+  <form method="post" action="php/save_account.php" id="accountForm">
+    <label>ФИО</label>
+    <input type="text" name="fullName" value="<?= htmlspecialchars($name ?? '') ?>" placeholder="ФИО" disabled
+      required><br>
+    <span class="error" id="fullNameError"></span><br>
 
-    <div class="profile-header">
-      <div class="photo-container">
-        <img id="profilePhoto" src="https://via.placeholder.com/120" alt="Фото профиля" />
-      </div>
-      <div class="profile-info">
-        <button id="changePhoto" class="btn-secondary">Сменить фото</button>
-      </div>
-    </div>
+    <label>Академическая Группа</label>
+    <input type="text" name="academicGroup" value="<?= htmlspecialchars($userData['academic'] ?? '') ?>"
+      placeholder="Академическая Группа" disabled required><br>
+    <span class="error" id="academicGroupError"></span><br>
 
-    <div class="form-group">
-      <label for="fullName" class="required-field">ФИО</label>
-      <input type="text" id="fullName" value="Иванов Иван Иванович" disabled />
-      <div id="fullNameError" class="error">
-        ФИО должно быть на русском языке (Фамилия Имя Отчество)
-      </div>
-    </div>
+    <label>email</label>
+    <input type="text" name="email" value="<?= htmlspecialchars($userData['email'] ?? '') ?>" placeholder="email"
+      disabled required><br>
+    <span class="error" id="emailError"></span><br>
 
-    <div class="form-group">
-      <label for="email" class="required-field">Email</label>
-      <input type="email" id="email" value="ivanov@example.com" disabled />
-      <div id="emailError" class="error">Введите корректный email</div>
-    </div>
+    <label>Telegram</label>
+    <input type="text" name="telegram" value="<?= htmlspecialchars($userData['telegram'] ?? '') ?>"
+      placeholder="Telegram" disabled><br>
+    <span class="error" id="telegramError"></span><br>
 
-    <div class="form-group">
-      <label for="academicGroup" class="required-field">Академическая группа</label>
-      <input type="text" id="academicGroup" value="ИКБО-01-21" disabled />
-      <div id="academicGroupError" class="error">
-        Введите номер академической группы
-      </div>
-    </div>
+    <input type="text" name="achievementOne" value="<?= htmlspecialchars($aboutData['achievementOne'] ?? '') ?>"
+      placeholder="Достижение 1" disabled><br>
+    <span class="error" id="achievementOneError"></span><br>
 
-    <div class="form-group">
-      <label for="telegram">Telegram</label>
-      <input type="text" id="telegram" value="@ivanov" disabled placeholder="@username" />
-      <div id="telegramError" class="error">
-        Никнейм должен начинаться с @ и содержать только буквы, цифры и
-        подчеркивания
-      </div>
-    </div>
+    <input type="text" name="achievementTwo" value="<?= htmlspecialchars($aboutData['achievementTwo'] ?? '') ?>"
+      placeholder="Достижение 2" disabled><br>
+    <span class="error" id="achievementTwoError"></span><br>
 
-    <div class="form-group">
-      <h2>Достижения</h2>
-      <div id="achievementsViewMode">
-        <div id="linksContainer">
-          <a href="https://github.com/ivanov" class="achievement-link" target="_blank">Достижение 1:
-            https://github.com/ivanov</a>
-          <a href="https://example.com/portfolio" class="achievement-link" target="_blank">Достижение 2:
-            https://example.com/portfolio</a>
-        </div>
-      </div>
-      <div id="achievementsEditMode" style="display: none">
-        <div class="form-group">
-          <label for="link1">Ссылка на достижение 1</label>
-          <input type="text" id="link1" placeholder="https://example.com" />
-          <div id="error1" class="error"></div>
-        </div>
-        <div class="form-group">
-          <label for="link2">Ссылка на достижение 2</label>
-          <input type="text" id="link2" placeholder="https://example.com" />
-          <div id="error2" class="error"></div>
-        </div>
-        <div class="form-group">
-          <label for="link3">Ссылка на достижение 3</label>
-          <input type="text" id="link3" placeholder="https://example.com" />
-          <div id="error3" class="error"></div>
-        </div>
-      </div>
-    </div>
+    <input type="text" name="achievementThree" value="<?= htmlspecialchars($aboutData['achievementThree'] ?? '') ?>"
+      placeholder="Достижение 3" disabled><br>
+    <span class="error" id="achievementThreeError"></span><br>
 
-    <div class="buttons">
-      <button id="editButton" class="btn-primary">Редактировать</button>
-      <button id="saveButton" class="btn-primary" style="display: none">
-        Сохранить
-      </button>
-      <button id="logoutButton" class="btn-danger">Выйти</button>
-    </div>
-  </div>
+    <button type="submit" id="saveButton" style="display: none;">Сохранить</button>
+    <textarea type="text" name="about" placeholder="Обо мне"
+      disabled><?= htmlspecialchars($aboutData['about'] ?? '') ?></textarea><br>
+    <span class="error" id="aboutError"></span><br>
+  </form>
 
-  <!-- Модальное окно для загрузки фото -->
-  <div id="photoModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h3>Загрузите новое фото</h3>
-      <input type="file" id="photoUpload" accept="image/*" />
-      <div style="margin-top: 20px">
-        <button id="uploadButton" class="btn-primary">Загрузить</button>
-        <button id="cancelUpload" class="btn-secondary" style="margin-left: 10px">
-          Отмена
-        </button>
-      </div>
+  <button type="submit" id="editButton">Редактировать</button>
+  <a href="php/logout.php">Выйти</a>
+
+  <?php if (isset($_SESSION['errors'])): ?>
+    <div class="errors">
+      <?php foreach ($_SESSION['errors'] as $error): ?>
+        <p><?= htmlspecialchars($error) ?></p>
+      <?php endforeach; ?>
     </div>
-  </div>
-  <script src="scripts/personal_account.js"></script>
+    <?php unset($_SESSION['errors']); ?>
+  <?php endif; ?>
+  <?php if (isset($_SESSION['success'])): ?>
+    <div class="success"><?= htmlspecialchars($_SESSION['success']) ?></div>
+    <?php unset($_SESSION['success']); ?>
+  <?php endif; ?>
 </body>
+<script src="scripts/personal_account.js"></script>
 
 </html>
