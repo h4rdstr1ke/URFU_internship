@@ -3,7 +3,7 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-echo realpath(__DIR__ . '/../../db.php');
+echo realpath(__DIR__ . '../db.php');
 
 include_once '../db.php';
 
