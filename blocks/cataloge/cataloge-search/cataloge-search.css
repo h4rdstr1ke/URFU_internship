@@ -1,0 +1,11 @@
+.cataloge-search {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    margin-right: 5%;
+    margin-top: 25px;
+}
+
+.cataloge-search span {
+    color: brown;
+}

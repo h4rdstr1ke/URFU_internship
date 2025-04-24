@@ -1,3 +1,16 @@
+document.getElementById('respondBtn').addEventListener('click', function() {
+    // Скрываем блок с информацией
+    document.querySelector('.application-info').style.display = 'none';
+    // Показываем форму
+    document.querySelector('.application-post').style.display = 'block';
+});
+
+    document.getElementById('backBtn').addEventListener('click', function() {
+    // Скрываем форму
+    document.querySelector('.application-post').style.display = 'none';
+    // Показываем блок с информацией
+    document.querySelector('.application-info').style.display = 'block';
+});
 document.getElementById('applicationForm').addEventListener('submit', function(e) {
     const applicationField = document.querySelector('input[name="application"]');
     const errorDiv = document.getElementById('error');
@@ -5,6 +18,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
     
     errorDiv.textContent = '';
     
+    //валидация
     if (!value) {
         errorDiv.textContent = 'Поле не может быть пустым';
         e.preventDefault();

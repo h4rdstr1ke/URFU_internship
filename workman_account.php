@@ -11,9 +11,9 @@ if (empty($_SESSION['user_id'])) {
 
 
 
-echo 'ID:' . $_SESSION['user_id'];
-echo $_SESSION['admin_id']
-    ?>
+//echo 'ID:' . $_SESSION['user_id'];
+//echo $_SESSION['admin_id']
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -28,10 +28,20 @@ echo $_SESSION['admin_id']
             border-radius: 5px;
         }
     </style>
+    <link rel="stylesheet" href="pages/workman_account.css" />
 </head>
 
 <body>
-    <a href="index.html">Главная</a>
+    <header class="header">
+        <img src="images/Logo.svg" />
+        <nav class="header-func">
+            <a href="index.html">Главная</a>
+            <a href="cataloge.php">Каталог</a>
+            <a href="#">О нас</a>
+            <a href="personal_account.php"><img class="header__personal_account" src="images/Personal_Account.svg"
+                    height="60px" width="60px" alt="personal_account" /></a>
+        </nav>
+    </header>
     <h2>Отклики</h2>
 
     <?php if ($result->num_rows > 0): ?>
@@ -57,9 +67,9 @@ echo $_SESSION['admin_id']
     <button>Создать вакансию</button><br>
 
     <form method="post" action="php/application_create.php">
-        <input name="title">
-        <input name="smallDescription">
-        <textarea name="description"></textarea>
+        <input name="title" placeholder="Укажите название вакансии" required>
+        <input name="smallDescription" placeholder="Краткое описание" required>
+        <textarea name="description" placeholder="Полное описание" required></textarea>
         <button>Создать вакансию</button>
     </form>
     <a href="php/logout.php">Выйти</a>

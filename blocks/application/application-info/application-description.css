@@ -1,0 +1,7 @@
+.application-description {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    width: 1100px;
+    height: 500px;
+}

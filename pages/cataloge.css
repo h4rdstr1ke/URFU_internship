@@ -1,0 +1,9 @@
+@import url(../blocks/cataloge/cataloge-page/cataloge-page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header-func.css);
+@import url(../blocks/header/header__personal_account.css);
+
+@import url(../blocks/cataloge/cataloge-search/cataloge-search.css);
+@import url(../blocks/cataloge/card/card.css);
+@import url(../blocks/cataloge/card_conainer/card_container.css);
+@import url(../fonts/cataloge-fonts.css);

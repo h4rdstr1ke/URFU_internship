@@ -12,6 +12,6 @@ if ($card_id <= 0) {
 $sql_delete = "DELETE FROM cataloge WHERE card_id = $card_id";
 $connect->query($sql_delete);
 
-header("Location '../cataloge.php'")
-
-    ?>
+header("Location: ../cataloge.php");
+exit();
+?>

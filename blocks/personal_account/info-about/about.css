@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    width: 300px;
+    height: 150px;
+  }
+  
+.about textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;     
+    resize: none;
+    display: flex;
+    align-items: center;    
+  }
+  
+  /* Центрирование placeholder */
+.about textarea::placeholder {
+    text-align: center;
+    line-height: 80px;      /* Примерное выравнивание по вертикали */
+  }

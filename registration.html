@@ -4,20 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Регистрация</title>
+    <style>
+      .toggle-link {
+        color: #0066cc;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      .toggle-link:hover {
+        text-decoration: none;
+      }
+      .hidden {
+        display: none;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+    </style>
+    <link rel="stylesheet" href="pages/reg-auth.css" />
   </head>
   <body>
-    <form action="php/register.php" method="POST">
-      <input type="text" name="login" placeholder="Логин" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Пароль" required />
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-    <p>Уже есть аккаунт? <a href="login.php">Войти</a></p>
-    <form action="php/auth.php" method="POST">
-      <input type="text" name="login" placeholder="Логин" required />
-      <input type="password" name="password" placeholder="Пароль" required />
-      <button type="submit">Войти</button>
-    </form>
-    <p>Нет аккаунта? <a href="register_form.html">Зарегистрироваться</a></p>
+    <header class="header">
+      <img src="images/Logo.svg" />
+      <nav class="header-func">
+        <a href="index.html">Главная</a>
+        <a href="cataloge.php">Каталог</a>
+        <a href="#">О нас</a>
+        <a href="personal_account.php"
+          ><img
+            class="header__personal_account"
+            src="images/Personal_Account.svg"
+            height="60px"
+            width="60px"
+            alt="personal_account"
+        /></a>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="form-container">
+        <form
+          id="registerForm"
+          action="php/register.php"
+          method="POST"
+          class="hidden"
+        >
+          <h2>Регистрация</h2>
+          <input type="text" name="login" placeholder="Логин" required /><br />
+          <input type="email" name="email" placeholder="Email" required /><br />
+          <input
+            type="password"
+            name="password"
+            placeholder="Пароль"
+            required
+          /><br />
+          <button type="submit">Зарегистрироваться</button>
+          <p>
+            Уже есть аккаунт?
+            <span class="toggle-link" id="showLogin">Войти</span>
+          </p>
+        </form>
+
+        <form id="loginForm" action="php/auth.php" method="POST">
+          <h2>Вход</h2>
+          <input type="text" name="login" placeholder="Логин" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Пароль"
+            required
+          />
+          <button type="submit">Войти</button>
+          <p>
+            Нет аккаунта?
+            <span class="toggle-link" id="showRegister"
+              >Зарегистрироваться</span
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const showLogin = document.getElementById("showLogin");
+        const showRegister = document.getElementById("showRegister");
+
+        // Показываем форму входа, скрываем регистрацию
+        showLogin.addEventListener("click", function () {
+          registerForm.classList.add("hidden");
+          loginForm.classList.remove("hidden");
+        });
+
+        // Показываем форму регистрации, скрываем вход
+        showRegister.addEventListener("click", function () {
+          loginForm.classList.add("hidden");
+          registerForm.classList.remove("hidden");
+        });
+      });
+    </script>
+    <script src="scripts/reg.js"></script>
   </body>
 </html>

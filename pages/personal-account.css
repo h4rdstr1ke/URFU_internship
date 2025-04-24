@@ -1,8 +1,20 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/header-func.css);
 @import url(../blocks/header/header__personal_account.css);
+@import url(../blocks/personal_account/content/content.css);
+@import url(../blocks/personal_account/photo-block/photo-block.css);
 
+@import url(../blocks/personal_account/info-about/info-about.css);
+@import url(../blocks/personal_account/info-conatiner/info-conatiner.css);
+@import url(../blocks/personal_account/info-about/info-card.css);
+
+@import url(../blocks/personal_account/info-about/about.css);
 @import url(../fonts/personal_account-fonts.css);
+
+/*{
+    border: solid 1px black; //Для разметки
+   }*/
+   
 
 .error {
     color: red;

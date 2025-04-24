@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Эементы управления
     const editButton = document.getElementById('editButton');
@@ -162,4 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
             el.textContent = '';
         });
     }
-});
+} );
